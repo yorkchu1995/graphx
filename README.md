@@ -1,2 +1,2 @@
 # graphx
-a library for Complex Network
+A library for Graph Calculation and Complex Network
