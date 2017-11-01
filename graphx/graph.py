@@ -8,8 +8,6 @@ class Graph:
     def __init__(self, adj_mat=[], node_list=[]):
         self.adj_mat = adj_mat  # adjacent matrix of graph
         self.node_list = node_list  # int or string
-        # self.node_num = nodeNum
-        # self.edge_num = edgeNum
         self.node_num = self.node_num()
         self.edge_num = self.edge_num()
 
@@ -38,12 +36,11 @@ class Graph:
 
     def delete_node(self, index):
         for i in range(self.node_num):
-            if self.adj_mat[i][index] == 1:
+            if self.adj_mat[i][index] == 1 or self.adj_mat[index][i] == 1:
                 self.adj_mat[i][index] = 0
-                self.edge_num -= 1
-            if self.adj_mat[index][i] == 1:
                 self.adj_mat[index][i] = 0
                 self.edge_num -= 1
+        self.node_num -= 1
 
     def add_edge(self, x, y, directed=1):
         if self.adj_mat[x][y] == 0:
@@ -138,21 +135,14 @@ class Graph:
         To judge whether it is a connected or not
         :return: Boolean value
         """
-        # paths = self.dfs_path(1)
-        # for x in paths:
-        #     if x is -1:
-        #         return False
-        # return True
         paths = self.dfs_search()
-        print("paths: " + str(paths))
-        print(len(paths))
         if len(paths) == self.node_num:
             return True
         else:
             return False
 
     def shortest_path(self, node1, node2):
-        paths = self.dfs_path(node1)
+        paths = dfs_path(node1)
         return paths[node2 - 1]
 
     # ======================================== #
@@ -267,8 +257,6 @@ class Graph:
         for i in range(len(clusterc)):
             sum += clusterc[i]
         return float(sum) / self.node_num
-
-        # def shotest_path(self, node1, node2):
 
     # ======================================== #
     #  The property of coreness

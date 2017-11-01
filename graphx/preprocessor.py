@@ -25,18 +25,6 @@ def make_mat(datasheet):
     return adj_mat
 
 
-def make_set_mat(filename):
-    import numpy as np
-    n = 1200000
-    mat = np.zeros((n, n))
-    with open(filename, 'r') as f:
-        for line in f:
-            cols = line.strip().split('\t')
-            mat[int(cols[0]) - 1][int(cols[1]) - 1] = 1
-            mat[int(cols[1]) - 1][int(cols[0]) - 1] = 1
-    return mat
-
-
 def set_node_mat(node_map, node, node_list):
     '''
     Adjacent list to adjacent matrix

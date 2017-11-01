@@ -22,15 +22,15 @@ class DijkstraPath():
     def _foreach_dijkstra(self):
         if len(self.used_node_list) == self.node_length - 1:
             return
-        for key, val in self.collected_node_dict.items():  # 遍历已有权值节点
+        for key, val in self.collected_node_dict.items():
             if key not in self.used_node_list and key != self.to_node:
                 self.used_node_list.append(key)
             else:
                 continue
-            for index1, node1 in enumerate(self.node_map[key]):  # 对节点进行遍历
-                # 如果节点在权值节点中并且权值大于新权值
+            for index1, node1 in enumerate(self.node_map[key]):
+
                 if node1 and index1 in self.collected_node_dict and self.collected_node_dict[index1][0] > node1 + val[0]:
-                    self.collected_node_dict[index1][0] = node1 + val[0] # 更新权值
+                    self.collected_node_dict[index1][0] = node1 + val[0]
                     self.collected_node_dict[index1][1] = key
                 elif node1 and index1 not in self.collected_node_dict:
                     self.collected_node_dict[index1] = [node1 + val[0], key]
