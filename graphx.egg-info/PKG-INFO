@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: graphx
+Version: 0.0.4
+Summary: a library for Complex Network
+Home-page: https://github.com/yorkchu1995/graphx/
+Author: York Chu
+Author-email: yorkchu1995@gmail.com
+License: MIT License
+Description: UNKNOWN
+Keywords: graph
+Platform: any

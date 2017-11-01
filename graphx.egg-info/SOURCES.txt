@@ -1,0 +1,11 @@
+setup.py
+graphx/__init__.py
+graphx/algorithm.py
+graphx/draw_graph.py
+graphx/graph.py
+graphx/preprocessor.py
+graphx.egg-info/PKG-INFO
+graphx.egg-info/SOURCES.txt
+graphx.egg-info/dependency_links.txt
+graphx.egg-info/requires.txt
+graphx.egg-info/top_level.txt
