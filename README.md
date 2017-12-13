@@ -1,5 +1,7 @@
-# Graphx
+Graphx
+----
 Graphx is a Python package for the creation, manipulation,and study of the structure, dynamics, and functions of Graph,also can be used for complex networks.
+
 Install
 ----
 
